@@ -20,7 +20,6 @@ const Form = ({ onSuccess, onError }) => {
        const type = formData.get("type");
        const email = formData.get("email");
        const message = formData.get("message");
-        console.log("name", name);
 
        // Vérification des informations manquantes
        if (!name || !firstName || !type || !email || !message) {
