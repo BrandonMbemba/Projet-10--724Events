@@ -8,7 +8,8 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
+  /* Changement pour trier les images de la plus récente à la plus ancienne */
+    new Date(evtB.date) < new Date(evtA.date) ? -1 : 1
   );
 // Effet pour gérer le changement d'index et la réinitialisation à la fin de la liste
 useEffect(() => {

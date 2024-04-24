@@ -28,6 +28,8 @@ const EventCard = ({
     </div>
   );
 
+  console.log("la date", getMonth);
+
 EventCard.propTypes = {
   imageSrc: PropTypes.string.isRequired,
   imageAlt: PropTypes.string,

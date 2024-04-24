@@ -12,5 +12,5 @@ export const MONTHS = {
   11: "novembre",
   12: "décembre",
 };
-
-export const getMonth = (date) => MONTHS[date.getMonth()];
+// Ajout +1 pour avoir le bon mois affiché car tableau commence à 0
+export const getMonth = (date) => MONTHS[date.getMonth() + 1];
