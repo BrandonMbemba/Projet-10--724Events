@@ -6,7 +6,7 @@ import PeopleCard from "../../components/PeopleCard";
 import "./style.scss";
 import EventList from "../../containers/Events";
 import Slider from "../../containers/Slider";
-/** import Logo from "../../components/Logo"; */
+import Logo from "../../components/Logo";
 import Icon from "../../components/Icon";
 import Form from "../../containers/Form";
 import Modal from "../../containers/Modal";
@@ -152,6 +152,7 @@ const Page = () => {
         </div>
       </div>
       <div className="col description">
+        <Logo size="large" />
         <p>
           Une agence événementielle propose des prestations de service
           spécialisées dans la conception et l&apos;organisation de divers événements

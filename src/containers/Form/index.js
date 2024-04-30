@@ -4,7 +4,7 @@ import Field, { FIELD_TYPES } from "../../components/Field";
 import Select from "../../components/Select";
 import Button, { BUTTON_TYPES } from "../../components/Button";
 
-const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 1000); })
+const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 500); })
 
 const Form = ({ onSuccess, onError }) => {
   const [sending, setSending] = useState(false);
@@ -12,21 +12,6 @@ const Form = ({ onSuccess, onError }) => {
     async (evt) => {
       evt.preventDefault();
       setSending(true);
-
-       // Récupération des valeurs des champs de saisie
-       const formData = new FormData(evt.target);
-       const name = formData.get("name");
-       const firstName = formData.get("firstName");
-       const type = formData.get("type");
-       const email = formData.get("email");
-       const message = formData.get("message");
-
-       // Vérification des informations manquantes
-       if (!name || !firstName || !type || !email || !message) {
-        setSending(false);
-        return alert("Veuillez remplir tous les champs");
-      }
-
       // We try to call mockContactApi
       try {
         await mockContactApi();
@@ -37,9 +22,6 @@ const Form = ({ onSuccess, onError }) => {
         setSending(false);
         onError(err);
       }
-
-      // Retourner null à la fin de la fonction
-      return null;
     },
     [onSuccess, onError]
   );
